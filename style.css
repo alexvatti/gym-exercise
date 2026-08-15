@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f5f7;
+    color: #222;
+}
+
+.container {
+    width: 94%;
+    max-width: 1400px;
+    margin: 30px auto;
+}
+
+header {
+    background: #17202a;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+header p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 12px;
+}
+
+/* ================= VIDEOS ================= */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.video-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fafafa;
+}
+
+.video-title {
+    padding: 14px;
+    font-weight: bold;
+    background: #17202a;
+    color: white;
+}
+
+.video-title span {
+    display: inline-block;
+    margin-right: 8px;
+    background: #4caf50;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 360px;
+    border: 0;
+    display: block;
+}
+
+.exercise-tag {
+    display: inline-block;
+    margin: 15px 15px 5px;
+    padding: 5px 10px;
+    background: #4caf50;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.exercise-tag.dumbbell {
+    background: #2980b9;
+}
+
+.video-card h3 {
+    padding: 0 15px;
+}
+
+.video-card ul {
+    padding: 0 35px 15px;
+}
+
+.video-card li {
+    margin-bottom: 8px;
+}
+
+/* ================= TABLE ================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 13px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #17202a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f7f7f7;
+}
+
+td:first-child {
+    text-align: left;
+    font-weight: bold;
+}
+
+/* ================= CHECKLIST ================= */
+
+.check-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.check-grid label {
+    padding: 14px;
+    background: #f4f6f7;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.check-grid input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-card iframe {
+        height: 500px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    .check-grid {
+        grid-template-columns: 1fr;
+    }
+}
