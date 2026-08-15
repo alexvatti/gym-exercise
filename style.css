@@ -52,22 +52,16 @@ header p {
 
 /* ================= VIDEOS ================= */
 
-/*
-   Videos stay side-by-side on larger screens
-   and automatically wrap when the screen becomes smaller.
-*/
-
 .video-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     width: 100%;
 }
 
 .video-card {
-    flex: 1 1 300px;
-    min-width: 280px;
-    max-width: 100%;
+    width: 100%;
+    min-width: 0;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -173,34 +167,23 @@ td:first-child {
     transform: scale(1.2);
 }
 
-/* ================= RESPONSIVE ================= */
-
-/* Tablet */
+/* ================= TABLET ================= */
 
 @media (max-width: 1100px) {
-
-    .video-card {
-        flex: 1 1 calc(50% - 10px);
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
 
-/* Mobile */
+/* ================= MOBILE ================= */
 
-@media (max-width: 900px) {
-
+@media (max-width: 700px) {
     .video-grid {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .video-card {
-        width: 100%;
-        min-width: 100%;
+        grid-template-columns: 1fr;
     }
 
     .video-card iframe {
-        height: 500px;
+        height: 450px;
     }
 
     table {
@@ -215,13 +198,11 @@ td:first-child {
     .check-grid {
         grid-template-columns: 1fr;
     }
-
 }
 
-/* Small Mobile */
+/* ================= SMALL MOBILE ================= */
 
 @media (max-width: 500px) {
-
     .container {
         width: 96%;
         margin: 15px auto;
@@ -232,11 +213,10 @@ td:first-child {
     }
 
     .video-card iframe {
-        height: 450px;
+        height: 400px;
     }
 
     header {
         padding: 18px;
     }
-
 }
