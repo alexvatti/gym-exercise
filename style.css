@@ -220,3 +220,41 @@ td:first-child {
         padding: 18px;
     }
 }
+
+/* =========================================================
+   FORCE VIDEO GRID — DESKTOP 3 SIDE BY SIDE
+   ========================================================= */
+
+.video-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.video-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+.video-card iframe {
+    width: 100% !important;
+    height: 360px !important;
+    display: block !important;
+    border: 0 !important;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .video-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
