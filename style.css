@@ -15,6 +15,8 @@ body {
     margin: 30px auto;
 }
 
+/* ================= HEADER ================= */
+
 header {
     background: #17202a;
     color: white;
@@ -32,12 +34,14 @@ header p {
     opacity: 0.8;
 }
 
+/* ================= SECTION ================= */
+
 .section {
     background: white;
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
 .section h2 {
@@ -48,13 +52,22 @@ header p {
 
 /* ================= VIDEOS ================= */
 
+/*
+   Videos stay side-by-side on larger screens
+   and automatically wrap when the screen becomes smaller.
+*/
+
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+    width: 100%;
 }
 
 .video-card {
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 100%;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -82,6 +95,8 @@ header p {
     border: 0;
     display: block;
 }
+
+/* ================= EXERCISE DETAILS ================= */
 
 .exercise-tag {
     display: inline-block;
@@ -158,12 +173,30 @@ td:first-child {
     transform: scale(1.2);
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+
+    .video-card {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+}
+
+/* Mobile */
 
 @media (max-width: 900px) {
 
     .video-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-card {
+        width: 100%;
+        min-width: 100%;
     }
 
     .video-card iframe {
@@ -182,4 +215,28 @@ td:first-child {
     .check-grid {
         grid-template-columns: 1fr;
     }
+
+}
+
+/* Small Mobile */
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 96%;
+        margin: 15px auto;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .video-card iframe {
+        height: 450px;
+    }
+
+    header {
+        padding: 18px;
+    }
+
 }
